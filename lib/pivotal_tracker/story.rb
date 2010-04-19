@@ -15,5 +15,16 @@ module PivotalTracker
     def task(id)
       tasks(id)
     end
+
+    def notes(scope = :all, opt_params = {})
+      params = {:project_id => self.prefix_options[:project_id],
+                :story_id => self.id}
+      params.merge!(opt_params)
+      Note.find(:all, :params => params)
+    end
+
+    def note(id)
+      notes(id)
+    end
   end
 end

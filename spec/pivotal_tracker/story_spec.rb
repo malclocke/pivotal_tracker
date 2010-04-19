@@ -14,6 +14,8 @@ describe PivotalTracker::Story do
         fixture('story.xml')
       mock.get "/services/v3/projects/1/stories/1/tasks.xml", @headers,
         fixture('tasks.xml')
+      mock.get "/services/v3/projects/1/stories/1/notes.xml", @headers,
+        fixture('notes.xml')
     end
   end
 
@@ -30,5 +32,10 @@ describe PivotalTracker::Story do
   it "should return all the tasks" do
     tasks = @story.tasks
     tasks.should be_kind_of(Array)
+  end
+
+  it "should return all the notes" do
+    notes = @story.notes
+    notes.should be_kind_of(Array)
   end
 end

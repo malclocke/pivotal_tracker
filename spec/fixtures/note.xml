@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<note>
+  <id type="integer">1</id>
+  <text>This is a comment on a story</text>
+  <author>Some Guy</author>
+  <noted_at type="datetime">2010/04/19 04:51:07 UTC</noted_at>
+</note>
