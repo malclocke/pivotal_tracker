@@ -2,16 +2,9 @@ module PivotalTracker
   class Note < Resource
 
     include PivotalTracker::BelongsToProject
+    include PivotalTracker::BelongsToStory
 
     self.site = SITE_BASE + 'projects/:project_id/stories/:story_id'
 
-    def story
-      self.project.story(self.prefix_options[:story_id])
-    end
-
-    def story=(story)
-      self.prefix_options[:story_id] = story.id
-      self.prefix_options[:project_id] = story.prefix_options[:project_id]
-    end
   end
 end
